@@ -1,0 +1,58 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KNN Visualizer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>k-NN Classification Visualizer</h1>
+      <p>Add training dots on the canvas, select target points, and run KNN predictions.</p>
+    </header>
+
+    <div class="main-content">
+      <div class="canvas-container">
+        <canvas id="knnCanvas" width="600" height="400"></canvas>
+      </div>
+
+      <div class="sidebar">
+        <div class="card">
+          <h3>1. Add Training Data</h3>
+          <div class="control-group">
+            <label for="clusterSelect">Cluster / Class:</label>
+            <select id="clusterSelect">
+              <option value="A">Cluster A (Red)</option>
+              <option value="B">Cluster B (Blue)</option>
+              <option value="C">Cluster C (Green)</option>
+            </select>
+          </div>
+          <p class="hint">Click inside the canvas to add training points.</p>
+        </div>
+
+        <div class="card">
+          <h3>2. Run Prediction</h3>
+          <div class="control-group">
+            <label for="kValue">K Value:</label>
+            <input type="number" id="kValue" value="3" min="1" max="50">
+          </div>
+          <div class="button-group">
+            <button id="addTestBtn" class="btn secondary">Mode: Add Test Points</button>
+            <button id="predictBtn" class="btn primary">Predict Classes</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>3. Controls</h3>
+          <button id="clearBtn" class="btn danger">Clear Canvas & Backend Data</button>
+          <p id="statusMsg" class="status"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
